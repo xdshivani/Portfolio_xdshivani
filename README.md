@@ -1,8 +1,31 @@
-# React + Vite
+# 🌐 Personal Portfolio - xdShivani
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal **portfolio website** built using **React.js** and **TailwindCSS**.  
+It showcases my skills, projects, blogs, and provides an easy way to connect with me.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
+
+- 🏠 **Home Section** – Brief introduction with smooth animations.  
+- 👩‍💻 **About Section** – Highlights of my skills and background.  
+- 💼 **Experience Section** – Work experience and journey.  
+- 📂 **Projects Section** – Showcases my projects with **Demo** and **Source Code** links.  
+- 📝 **Blogs Page** – Tech articles (React, MERN stack, Tailwind, etc.).  
+- 📞 **Contact Section** – Quick access to connect with me.  
+- 📱 **Responsive Design** – Fully responsive across devices.  
+- 🎨 **Modern UI** – Built with TailwindCSS, includes animations and hover effects.  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React.js, React Router, Context API  
+- **Styling:** TailwindCSS  
+- **Icons:** RemixIcon, Lucide Icons  
+- **Other Tools:** Framer Motion (animations), GitHub Pages/Netlify for deployment  
+
+---
+
+## 📂 Project Structure
+
