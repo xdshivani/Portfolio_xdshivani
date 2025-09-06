@@ -31,7 +31,7 @@ It showcases my skills, projects, blogs, and provides an easy way to connect wit
 🌟 Deployment
 
 Deployed using Netlify
-👉 Live Demo
+👉 Live Demo:  https://portfolio-xdshivani.vercel.app/
 
 📬 Contact
 
