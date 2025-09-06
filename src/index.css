@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    scroll-behavior: smooth;
+    
+}
+
+html, body {
+    overscroll-behavior: none;   /* Prevents scroll bounce */
+    overflow-x: hidden;          /* Prevents horizontal scroll */
+    background-color: #000;      /* Keep your site background consistent */
+  }
