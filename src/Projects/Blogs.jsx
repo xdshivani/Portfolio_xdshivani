@@ -1,5 +1,6 @@
 export default function Blogs() {
   const articles = [
+    //service_rfwcfig
     {
       id: 1,
       title: "Getting Started with React",

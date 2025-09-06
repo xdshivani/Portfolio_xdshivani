@@ -74,7 +74,7 @@ const Navbar = () => {
           <a href="#Projects" onClick={() => openMenu(false)}>
             <li className="hover:text-blue-400 transition-colors">Projects</li>
           </a>
-          <a href="#Footer" onClick={() => openMenu(false)}>
+          <a href="#Contact" onClick={() => openMenu(false)}>
             <li className="hover:text-blue-400 transition-colors">Contact</li>
           </a>
         </ul>

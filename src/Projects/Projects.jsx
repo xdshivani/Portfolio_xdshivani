@@ -27,7 +27,7 @@ const Projects = () => {
           main="A personal portfolio website built with React and Tailwind CSS"
           demoLink="/blogs"
           target="_blank"
-          codeLink="https://github.com/yourusername/blogging-website"
+          codeLink="https://github.com/xdshivani/Portfolio_xdshivani.git"
           image={portfolio}
         />
       </div>

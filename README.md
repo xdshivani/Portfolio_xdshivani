@@ -27,5 +27,20 @@ It showcases my skills, projects, blogs, and provides an easy way to connect wit
 
 ---
 
-## 📂 Project Structure
 
+🌟 Deployment
+
+Deployed using Netlify
+👉 Live Demo
+
+📬 Contact
+
+If you'd like to collaborate or just say hi:
+
+Portfolio: xdShivani
+
+Email: shivani2499chauhan@gmail.com
+
+LinkedIn: www.linkedin.com/in/xdshivani
+
+GitHub: www.github.com/xdshivani

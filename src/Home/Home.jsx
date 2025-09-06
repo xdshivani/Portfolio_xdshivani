@@ -1,9 +1,38 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 import image1 from "../assets/image1.png";
 import TextChanger from "../TextChanger";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_rfwcfig", // ✅ replace with your EmailJS Service ID
+        "template_gdsjy78", // ✅ replace with your EmailJS Template ID
+        e.target,
+        "JQgRMnSZqguQ1Y_At" // ✅ replace with your EmailJS Public Key
+      )
+      .then(
+        () => {
+          e.target.reset(); // ✅ Clear form fields
+          setFormSubmitted(true);
+          setTimeout(() => {
+            setFormSubmitted(false);
+            setIsOpen(false);
+          }, 2500);
+        },
+        (error) => {
+          console.error("FAILED...", error);
+          alert("❌ Something went wrong. Please try again later.");
+        }
+      );
+  };
 
   return (
     <div
@@ -41,48 +70,68 @@ const Home = () => {
 
       {/* Modal */}
       {isOpen && (
-  <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50">
-    <div className="bg-zinc-900 rounded-2xl shadow-lg w-11/12 md:w-1/2 p-6 relative">
-      {/* Close Button */}
-      <button
-        onClick={() => setIsOpen(false)}
-        className="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl"
-      >
-        &times;
-      </button>
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50">
+          <div className="bg-[#1e293b]/90 backdrop-blur-lg rounded-2xl shadow-lg w-11/12 md:w-1/2 p-6 relative">
+            {/* Close Button */}
+            <button
+              aria-label="Close Modal"
+              onClick={() => setIsOpen(false)}
+              className="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl"
+            >
+              &times;
+            </button>
 
-      <h2 className="text-2xl font-bold text-white mb-4">
-      Get in Touch
-      </h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Get in Touch</h2>
 
-      <form className="flex flex-col gap-4">
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="px-3 py-2 rounded-lg bg-zinc-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          className="px-3 py-2 rounded-lg bg-zinc-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <textarea
-          rows="4"
-          placeholder="Project / Collaboration Details"
-          className="px-3 py-2 rounded-lg bg-zinc-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        ></textarea>
+            {formSubmitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
+                className="flex items-center justify-center p-6"
+              >
+                <div className="bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg">
+                  ✅ Successfully Submitted!
+                </div>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <input
+                  type="text"
+                  name="from_name"
+                  placeholder="Your Name"
+                  aria-label="Name"
+                  className="px-3 py-2 rounded-lg bg-zinc-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+                <input
+                  type="email"
+                  name="from_email"
+                  placeholder="Your Email"
+                  aria-label="Email"
+                  className="px-3 py-2 rounded-lg bg-zinc-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+                <textarea
+                  rows="4"
+                  name="message"
+                  placeholder="Project / Message Details"
+                  aria-label="Message"
+                  className="px-3 py-2 rounded-lg bg-zinc-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                ></textarea>
 
-        <button
-          type="submit"
-          className="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-all"
-        >
-          Submit
-        </button>
-      </form>
-    </div>
-  </div>
-)}
-
+                <button
+                  type="submit"
+                  className="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-all"
+                >
+                  Submit
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
