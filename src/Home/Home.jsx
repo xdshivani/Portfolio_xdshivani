@@ -81,7 +81,12 @@ const Home = () => {
               &times;
             </button>
 
+            
             <h2 className="text-2xl font-bold text-white mb-4">Get in Touch</h2>
+            
+
+            
+            
 
             {formSubmitted ? (
               <motion.div

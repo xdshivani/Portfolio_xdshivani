@@ -1,9 +1,10 @@
 import { FaCss3, FaHtml5, FaJs, FaReact } from "react-icons/fa";
 import { SiMongodb, SiTailwindcss } from "react-icons/si";
-import {RiNextjsLine } from "react-icons/ri";
+import { RiNextjsLine } from "react-icons/ri";
 import { FaNodeJs } from "react-icons/fa6";
 import { SiTcs } from "react-icons/si";
 import { TbSoupFilled } from "react-icons/tb";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 const techStack = [
   { icon: <FaHtml5 color="#E34F26" size={50} />, name: "HTML5" },
@@ -48,7 +49,23 @@ const Experience = () => {
           <div className="flex gap-10 bg-slate-950 bg-opacity-45 mt-4 rounded-lg p-4 items-center">
             <SiTcs color="#4285F4" size={50} />
             <span className="text-white">
-              <h2 className="leading-tight">System Engineer, TCS</h2>
+              <div className="flex justify-between">
+                <h2 className="leading-tight">System Engineer, TCS</h2>
+                <h2 className="leading-tight mr-2 flex items-center gap-1 cursor-pointer text-blue-500">
+                  <a
+                    href="/Shivani Chauhan_MERNStack.pdf" //link to the file
+                    //download={"Shivani_Resume.pdf"} //sets the fileName for the downloaded file
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="leading-tight mr-2 flex items-center gap-1 cursor-pointer text-blue-500"
+                  >
+                    <span>
+                      <u>Download CV</u>
+                    </span>
+                    <MdOutlineFileDownload className="text-xl" />
+                  </a>
+                </h2>
+              </div>
               <p className="text-sm leading-tight font-thin">
                 July 2022 - Present
               </p>
