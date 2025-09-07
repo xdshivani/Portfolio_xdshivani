@@ -34,6 +34,21 @@ const Home = () => {
       );
   };
 
+  // function handleDownload(){
+  //   const link = document.createElement('a');
+  //   link.href = '/Shivani Chauhan_MERNStack.pdf'; // Path to your PDF file
+  //   // link.download = 'Shivani_Chauhan_MERNStack.pdf'; // Name for the downloaded file
+  //   link.target="_blank"
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // }
+
+  function handleDownload() {
+    const pdfUrl = "/Shivani Chauhan_MERNStack.pdf";
+    window.open(pdfUrl, "_blank", "noopener,noreferrer");
+  }
+
   return (
     <div
       id="Home"
@@ -53,14 +68,26 @@ const Home = () => {
           server-side operations.
         </p>
 
-        <button
-          onClick={() => setIsOpen(true)}
-          className="mt-6 md:mt-8 text-white py-2 px-4 text-sm md:text-lg
-          hover:opacity-85 duration-300 hover:scale-105 font-semibold
-          rounded-3xl bg-[#465697] shadow-lg"
-        >
-          Let&apos;s Connect
-        </button>
+        {/* Button Wrapper */}
+        <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-4 w-full">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="text-white py-2 px-4 text-sm md:text-lg
+    hover:opacity-85 duration-300 hover:scale-105 font-semibold
+    rounded-3xl bg-[#465697] shadow-lg w-full sm:w-auto"
+          >
+            Let&apos;s Connect
+          </button>
+
+          <button
+            onClick={handleDownload}
+            className="text-[#8ca1ff] py-2 px-4 text-sm md:text-lg
+    hover:opacity-85 hover:text-white duration-300 hover:scale-105 font-semibold
+    rounded-3xl border border-[rgb(164 172 203)] shadow-lg w-full sm:w-auto"
+          >
+            Download CV
+          </button>
+        </div>
       </div>
 
       {/* Right Section - Image */}
@@ -81,12 +108,7 @@ const Home = () => {
               &times;
             </button>
 
-            
             <h2 className="text-2xl font-bold text-white mb-4">Get in Touch</h2>
-            
-
-            
-            
 
             {formSubmitted ? (
               <motion.div

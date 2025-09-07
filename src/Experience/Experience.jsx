@@ -4,7 +4,7 @@ import { RiNextjsLine } from "react-icons/ri";
 import { FaNodeJs } from "react-icons/fa6";
 import { SiTcs } from "react-icons/si";
 import { TbSoupFilled } from "react-icons/tb";
-import { MdOutlineFileDownload } from "react-icons/md";
+// import { MdOutlineFileDownload } from "react-icons/md";
 
 const techStack = [
   { icon: <FaHtml5 color="#E34F26" size={50} />, name: "HTML5" },
@@ -51,7 +51,7 @@ const Experience = () => {
             <span className="text-white">
               <div className="flex justify-between">
                 <h2 className="leading-tight">System Engineer, TCS</h2>
-                <h2 className="leading-tight mr-2 flex items-center gap-1 cursor-pointer text-blue-500">
+                {/* <h2 className="leading-tight mr-2 flex items-center gap-1 cursor-pointer text-blue-500">
                   <a
                     href="/Shivani Chauhan_MERNStack.pdf" //link to the file
                     //download={"Shivani_Resume.pdf"} //sets the fileName for the downloaded file
@@ -64,7 +64,7 @@ const Experience = () => {
                     </span>
                     <MdOutlineFileDownload className="text-xl" />
                   </a>
-                </h2>
+                </h2> */}
               </div>
               <p className="text-sm leading-tight font-thin">
                 July 2022 - Present
